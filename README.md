@@ -31,7 +31,7 @@ $ npm run build
 ### Todos
 
  - Develop front-end UI
- - write the php backend
+ - Write the php backend
 
 License
 ----

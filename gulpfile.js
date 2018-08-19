@@ -156,10 +156,10 @@ gulp.task('html-deploy', function() {
         .pipe(plumber())
         .pipe(gulp.dest('dist'));
 
-    gulp.src('app/fonts/**/*')
+    gulp.src('app/styles/fonts/**/*')
         //prevent pipe breaking caused by errors from gulp plugins
         .pipe(plumber())
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('dist/styles/fonts'));
 
     //grab all of the styles
     gulp.src(['app/styles/*.css', '!app/styles/styles.css'])
@@ -179,10 +179,10 @@ gulp.task('clean', function() {
 gulp.task('scaffold', function() {
   return shell.task([
       'mkdir dist',
-      'mkdir dist/fonts',
       'mkdir dist/images',
       'mkdir dist/scripts',
-      'mkdir dist/styles'
+      'mkdir dist/styles',
+      'mkdir dist/styles/fonts'
     ]
   );
 });

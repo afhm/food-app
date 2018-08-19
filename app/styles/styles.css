@@ -170,8 +170,29 @@ figure {
 /* Forms */
 /* Tables */
 /* Code */
+@font-face {
+  font-family: "Open SansL";
+  src: url("fonts/OpenSans/OpenSans-Light.ttf") format("truetype"); }
+
 body {
-  background-color: #e4eaff;
-  font-family: sans-serif;
+  background-color: #a7baff;
   text-align: center;
-  color: #9e7d22; }
+  color: #a88218;
+  font-size: 3rem; }
+
+a {
+  text-decoration: none;
+  color: #ee6f6f;
+  -webkit-transition: .2s;
+  transition: .2s; }
+
+a:hover {
+  color: #f53c3c; }
+
+h2 {
+  margin-top: 11rem;
+  font-family: 'Open SansL'; }
+
+p {
+  font-family: cursive;
+  font-size: 1.3rem; }

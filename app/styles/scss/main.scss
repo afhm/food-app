@@ -1,0 +1,11 @@
+// Reset
+@import "base/normalize";
+@import "base/reset";
+@import "base/variables";
+
+body {
+    background-color: rgb(228, 234, 255);
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(168, 130, 24);
+}

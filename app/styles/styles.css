@@ -172,7 +172,7 @@ figure {
 /* Code */
 @font-face {
   font-family: "Open SansL";
-  src: url("fonts/OpenSans/OpenSans-Light.ttf") format("truetype"); }
+  src: url("../../fonts/OpenSans/OpenSans-Light.ttf") format("truetype"); }
 
 body {
   background-color: #a7baff;

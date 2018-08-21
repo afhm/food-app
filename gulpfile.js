@@ -57,7 +57,7 @@ gulp.task('images-deploy', function () {
 //compiling our Javascripts
 gulp.task('scripts', function () {
   //this is where our dev JS scripts are
-  return gulp.src(['app/scripts/src/_includes/**/*.js', 'app/scripts/src/**/*.js'])
+  return gulp.src(['app/scripts/**/*.js', 'app/scripts/**/*.js'])
     //prevent pipe breaking caused by errors from gulp plugins
     .pipe(plumber())
     //this is the filename of the compressed version of our JS
@@ -145,7 +145,7 @@ gulp.task('styles-deploy', function () {
 //basically just keeping an eye on all PHP files
 gulp.task('php', function () {
   //watch any and all HTML files and refresh when something changes
-  return gulp.src('app/*.php')
+  return gulp.src('app/**/*.php')
     .pipe(plumber())
     .pipe(browserSync.reload({
       stream: true
@@ -206,10 +206,10 @@ gulp.task('scaffold', function () {
 //  compress all scripts and SCSS files
 gulp.task('default', ['connectSync', 'scripts', 'styles'], function () {
   //a list of watchers, so it will watch all of the following files waiting for changes
-  gulp.watch('app/scripts/src/**', ['scripts']);
+  gulp.watch('app/scripts/**', ['scripts']);
   gulp.watch('app/styles/scss/**', ['styles']);
   gulp.watch('app/images/**', ['images']);
-  gulp.watch('app/*.php', ['php']);
+  gulp.watch('app/**/*.php', ['php']);
 });
 
 //this is our deployment task, it will set everything for deployment-ready files

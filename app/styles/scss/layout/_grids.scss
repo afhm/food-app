@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    grid-template-rows: [navbar-start] 7rem [navbar-end];
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 22rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    &--location {
+        grid-template-rows: 28.4rem repeat(3, min-content);
+    }
+    &--menu {
+        grid-template-rows: 6.5rem repeat(2, min-content);
+    }
+    &--review {
+        grid-template-rows: repeat(3, min-content);
+    }
+    &--track {
+        grid-template-rows: repeat(3, min-content);
+    }
+}

@@ -20,11 +20,12 @@ $ npm start
 
 ### Deployment
 
-To make a build ready for deployment simply run:
+To Serve the Fully Built & Optimized Site simply run:
 
 ```sh
 $ npm run build 
 ```
+```npm run build``` task creates the dist/ folder in the root of the project which contains html and optimized css, js and imagea assets.
 
 
 

@@ -1,0 +1,32 @@
+.header {
+    background-color: $color-red;
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+    justify-content: center;
+
+    &__search-menu {
+        padding: 16px 16px 16px 90px;
+        border: none;
+        background: rgba(0, 0, 0, 0.003);
+        box-shadow: 0 10px 20px rgba(0,0,0,.2);
+        background-color: rgba(255, 255, 255, 0.842);
+        margin-top: 10.8rem;
+        width: 85rem;
+        max-height: 8rem;
+        font-size: 3rem;
+
+    }
+    &__search-btn {
+        background-color: rgba(226, 55, 63, 0.87);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4.2rem;
+        align-self: center;
+        justify-self: center;
+        font-weight:bold;
+        padding: 0.1rem 2.5rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,.2);
+        cursor:pointer;
+        
+    }
+}

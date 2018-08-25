@@ -1,41 +1,69 @@
-
 //--------------------------------------------------------------------------
 // This file contains all base Styles.
 // //--------------------------------------------------------------------------
 
 // COLOR VARIABLES
 
+$color-brown: #522a27;
+
+
+$color-gold: #c59849;
+$color-red: #c0392b;
+
+
+$color-green-light:#a6d49f;
+$color-green-dark:#9cb380;
 
 // FONT VARIABLES
 
-$f-p: 'Open SansL';
+// $f-p: 'Open SansL';
+
+//FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
 
 
+//tracker
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
+$font-stack: 14px/14px Helvetica, sans-serif;
+$primary-color: #FF6699;
+$base-color: #bbb;
+$break-large: 800px;
+$break-medium: 640px;
+$break-small: 480px;
+
+
 *,
 *::before,
 *::after {
-  margin:0;
-  padding:0;
-  box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 16px
+}
+
+body {
+    font-family: $font-primary;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 /**
  * Basic styles for links
  */
 
- html {
-   box-sizing: border-box;
-   font-size: 62.5%;
- }
+ a:link,
+:visited {
+    text-decoration: none;
+    color: #fff;
+    cursor:pointer;
+}
 
- body {
-   font-family: $f-p;
-   color
- }
+
+
+

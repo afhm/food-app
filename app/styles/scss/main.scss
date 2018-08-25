@@ -1,36 +1,20 @@
 // Reset
+
+@import "abstracts/mixins";
+
 @import "base/normalize";
 @import "base/reset";
-@import "abstracts/mixins";
-@import "base/variables";
 @import "base/fonts";
-body {
-    background-color: rgb(167, 186, 255);
-    text-align: center;
-    color: rgb(168, 130, 24);
-    font-size: 3rem;
-}
+@import "base/base";
+@import "base/navigation";
 
-a {
-    text-decoration: none;
-    color: rgb(238, 111, 111);
-    transition: .2s;
-}
+@import "layout/grids";
 
-a:hover {
-    color: rgb(245, 60, 60)
-}
+@import 'components/header';
+@import 'components/steps';
 
-h2 {
-    margin-top: 11rem;
-    font-family: 'Open SansL';
-}
 
-p {
-    font-family: cursive;
-    font-size: 1.3rem;
-}
-
+// @import "pages/home";
 
 
 

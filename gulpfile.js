@@ -25,7 +25,8 @@ gulp.task('connectSync', function () {
   }, function () {
     browserSync({
       injectChanges: true,
-      proxy: '127.0.0.1:8000'
+      proxy: '127.0.0.1:8000',
+      browser: "firefox"
     });
   });
 });
@@ -35,7 +36,7 @@ gulp.task('connectSync', function () {
 
 //compressing images & handle SVG files
 gulp.task('images', function (tmp) {
-  gulp.src(['app/images/*.jpg', 'app/images/*.png'])
+  gulp.src(['app/img/*.jpg', 'app/img/*.png'])
     //prevent pipe breaking caused by errors from gulp plugins
     .pipe(plumber())
     .pipe(imagemin({
@@ -43,15 +44,15 @@ gulp.task('images', function (tmp) {
       progressive: true,
       interlaced: true
     }))
-    .pipe(gulp.dest('app/images'));
+    .pipe(gulp.dest('app/img'));
 });
 
 //compressing images & handle SVG files
 gulp.task('images-deploy', function () {
-  gulp.src(['app/images/**/*', '!app/images/README'])
+  gulp.src(['app/img/**/*', '!app/img/README'])
     //prevent pipe breaking caused by errors from gulp plugins
     .pipe(plumber())
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/img'));
 });
 
 //compiling our Javascripts
@@ -192,7 +193,7 @@ gulp.task('scaffold', function () {
   return shell.task([
     'mkdir dist',
     'mkdir dist/fonts',
-    'mkdir dist/images',
+    'mkdir dist/img',
     'mkdir dist/scripts',
     'mkdir dist/styles'
   ]);
@@ -208,7 +209,7 @@ gulp.task('default', ['connectSync', 'scripts', 'styles'], function () {
   //a list of watchers, so it will watch all of the following files waiting for changes
   gulp.watch('app/scripts/**', ['scripts']);
   gulp.watch('app/styles/scss/**', ['styles']);
-  gulp.watch('app/images/**', ['images']);
+  gulp.watch('app/img/**', ['images']);
   gulp.watch('app/**/*.php', ['php']);
 });
 

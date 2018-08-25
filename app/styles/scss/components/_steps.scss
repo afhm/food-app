@@ -8,10 +8,13 @@
 .steps {
     display: grid; 
     grid-template-columns: repeat(4, minmax(10rem,1fr));
-    grid-gap: 3rem;
+    grid-gap: 4rem;
 }
 
 .step {
+    display: grid;
+    align-content: start;
+
     &__text {
         font-size: 1.8rem;
         color: $color-green-dark;
@@ -28,5 +31,5 @@
     &__heading-3 {
         margin: 0 auto
     }
-    display: grid;
+    
 }

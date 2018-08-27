@@ -16,42 +16,43 @@
 </head>
 
 <body class="container container--menu">
-<nav class="navbar">
-    <div class="navbar__navtitle">Food Express</div>
+    <nav class="navbar">
+        <div class="navbar__navtitle">Food Express</div>
 
-    <div class="navbar__rightnav">
+        <div class="navbar__rightnav">
 
-      <a href="index.php">
-        <div class="navbar__location navbar--btn">
-          <i class="fas fa-thumbtack fa-2x"></i>
-          Location
+            <a href="index.php">
+                <div class="navbar__location navbar--btn">
+                    <i class="fas fa-thumbtack fa-2x"></i>
+                    Location
+                </div>
+            </a>
+
+            <a href="menu.php">
+                <div class="navbar__menu navbar--active navbar--btn">
+                    <i class="fas fa-utensils fa-2x"></i>
+                    Menu
+                </div>
+            </a>
+
+            <a href="review.php">
+                <div class="navbar__review navbar--btn">
+                    <i class="fas fa-shopping-cart fa-2x"></i>
+                    Review
+                </div>
+            </a>
+
+            <a href="track.php">
+                <div class="navbar__track navbar--btn">
+                    <i class="fas fa-box fa-2x"></i>
+                    Track
+                </div>
+            </a>
+
         </div>
-      </a>
-      
-      <a href="menu.php">
-        <div class="navbar__menu navbar--active navbar--btn">
-          <i class="fas fa-utensils fa-2x"></i>
-          Menu
-        </div>
-      </a>
 
-      <a href="orders.php">
-        <div class="navbar__review navbar--btn">
-          <i class="fas fa-shopping-cart fa-2x"></i>
-          Review
-        </div>
-      </a>
+    </nav>
 
-      <a href="track.php">
-        <div class="navbar__track navbar--btn">
-          <i class="fas fa-box fa-2x"></i>
-          Track
-        </div>
-      </a>
-
-    </div>
-
-  </nav>
     <header class="header_menu">
         <div class="header_menu__categories">
             <div class="selectcat cat">Select a Category Here</div>
@@ -154,7 +155,7 @@
     </section>
     <footer class="footer">footer</footer>
 
- 
+
 </body>
 
 </html>

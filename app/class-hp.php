@@ -1,26 +1,29 @@
 <?php // Create parent class 
 $query = $_GET['query'];
 
-$connect = mysqli_connect("127.0.0.1", "root", "");
-mysqli_select_db($connect, "food");
+//MySQLi information
 
-$fetch1 = mysqli_query($connect, "SELECT name FROM location");
+$db_host     = "127.0.0.1";
+$db_username = "root";
+$db_password = "";
 
-// set array
-$array = array();
+//connect to mysqli database (Host/Username/Password)
+$connection = mysqli_connect($db_host, $db_username, $db_password) or die("Error " . mysqli_error());
 
-while($row = mysqli_fetch_assoc($fetch1)){
-    $array[] = $row;
+//select MySQLi dabatase table
+$db = mysqli_select_db($connection, "food") or die("Error " . mysqli_error());
+
+$sql = mysqli_query($connection, "SELECT name FROM location");
+
+while($row = mysqli_fetch_array($sql)) {
+$names[] = $row['name'];
 }
 
-print_r($array);
-
-
-foreach ($array as $key=> $value) {
-    if ($query && strpos(strtolower($value), strtolower($query))===false) {
+foreach ($names as $key=> $value) {
+    if ($query && strpos(strtolower($names), strtolower($query))===false) {
         unset($array[$key]);
     }
 }
 
-echo json_encode(array_values($array));
+echo json_encode(array_values($names));
 ?>

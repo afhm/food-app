@@ -10,7 +10,7 @@ window.addEventListener("load", function(){
 // Autocomplete for form
 function hinter(event) {
 	var input = event.target;
-	var huge_list = document.getElementById('addr_list');
+	var addr_list = document.getElementById('addr_list');
 	// minimum number of characters before we start to generate suggestions
 	var min_characters = 0;
 
@@ -21,13 +21,13 @@ function hinter(event) {
 		window.hinterXHR.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				var response = JSON.parse( this.responseText ); 
-				huge_list.innerHTML = "";
+				addr_list.innerHTML = "";
 
 				response.forEach(function(item) {
                     // Create a new <option> element.
                     var option = document.createElement('option');
                     option.value = item;
-                    huge_list.appendChild(option);
+                    addr_list.appendChild(option);
                 });
 			}
 		};

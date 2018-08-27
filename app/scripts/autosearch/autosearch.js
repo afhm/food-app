@@ -10,7 +10,7 @@ window.addEventListener("load", function(){
 // Autocomplete for form
 function hinter(event) {
 	var input = event.target;
-	var huge_list = document.getElementById('huge_list');
+	var huge_list = document.getElementById('addr_list');
 	// minimum number of characters before we start to generate suggestions
 	var min_characters = 0;
 
@@ -41,11 +41,11 @@ function validateForm(){
 	// Get the input element
 	var input = document.getElementById('name_input');
 	// Get the datalist
-	var huge_list = document.getElementById('huge_list');
+	var addr_list = document.getElementById('addr_list');
 
 
 	// If we find the input inside our list, we submit the form
-	for (var element of huge_list.children) {
+	for (var element of addr_list.children) {
 		if(element.value == input.value) {
 			return true;
 		}

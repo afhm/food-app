@@ -24,7 +24,7 @@
       <div class="navbar__menu">
 
         <i class="fas fa-utensils fa-2x"></i>
-        <a href="menu.html">menu</a>
+        <a href="menu.php">menu</a>
       </div>
       <div class="navbar__review">
         <i class="fas fa-shopping-cart fa-2x"></i>review</div>

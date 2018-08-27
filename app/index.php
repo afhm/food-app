@@ -17,19 +17,34 @@
   <nav class="navbar">
     <div class="navbar__navtitle">Food Express</div>
     <div class="navbar__rightnav">
-      <div class="navbar__location">
-        <i class="fas fa-thumbtack fa-2x"></i>
-        <a href="index.php">location</a>
-      </div>
-      <div class="navbar__menu">
+      
+      <a href="index.php">
+        <div class="navbar__location navbar--active navbar--btn">
+          <i class="fas fa-thumbtack fa-2x"></i>
+          Location
+        </div>
+      </a>
+      <a href="menu.php">
+        <div class="navbar__menu  navbar--btn">
+          <i class="fas fa-utensils fa-2x"></i>
+          Menu
+        </div>
+      </a>
 
-        <i class="fas fa-utensils fa-2x"></i>
-        <a href="menu.php">menu</a>
-      </div>
-      <div class="navbar__review">
-        <i class="fas fa-shopping-cart fa-2x"></i>review</div>
-      <div class="navbar__track">
-        <i class="fas fa-box fa-2x"></i>track</div>
+      <a href="orders.php">
+        <div class="navbar__review navbar--btn">
+          <i class="fas fa-shopping-cart fa-2x"></i>
+          Review
+        </div>
+      </a>
+
+      <a href="track.php">
+        <div class="navbar__track navbar--btn">
+          <i class="fas fa-box fa-2x"></i>
+          Track
+        </div>
+      </a>
+
     </div>
 
   </nav>

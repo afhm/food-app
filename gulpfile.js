@@ -1,5 +1,5 @@
 //initialize all of our variables
-var app, base, concat, directory, gulp, gutil, hostname, path, refresh, sass, uglify, imagemin, minifyCSS, browserSync, autoprefixer, gulpSequence, shell, plumber;
+var app, base, concat, directory, gulp, gutil, hostname, path, refresh, sass, uglify, imagemin, minifyCSS, browserSync, gulpSequence, shell, plumber;
 
 var autoPrefixBrowserList = ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'];
 
@@ -13,7 +13,7 @@ sass = require('gulp-sass');
 imagemin = require('gulp-imagemin');
 minifyCSS = require('gulp-minify-css');
 browserSync = require('browser-sync');
-autoprefixer = require('gulp-autoprefixer');
+// autoprefixer = require('gulp-autoprefixer');
 gulpSequence = require('gulp-sequence').use(gulp);
 shell = require('gulp-shell');
 plumber = require('gulp-plumber');
@@ -105,10 +105,10 @@ gulp.task('styles', function () {
         'app/styles/scss/'
       ]
     }))
-    .pipe(autoprefixer({
-      browsers: autoPrefixBrowserList,
-      cascade: true
-    }))
+    // .pipe(autoprefixer({
+    //   browsers: autoPrefixBrowserList,
+    //   cascade: true
+    // }))
     //catch errors
     .on('error', gutil.log)
     //the final filename of our combined css file
@@ -132,10 +132,10 @@ gulp.task('styles-deploy', function () {
         'app/styles/scss',
       ]
     }))
-    .pipe(autoprefixer({
-      browsers: autoPrefixBrowserList,
-      cascade: true
-    }))
+    // .pipe(autoprefixer({
+    //   browsers: autoPrefixBrowserList,
+    //   cascade: true
+    // }))
     //the final filename of our combined css file
     .pipe(concat('styles.css'))
     .pipe(minifyCSS())

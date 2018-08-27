@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <script src="scripts/app.js"></script>
 
   <title>PHP Web App</title>
 </head>
@@ -50,7 +51,9 @@
   </nav>
   <header class="header">
     <div class="enclose">
-      <input class="header__search-menu" placeholder="Enter Area / Locality" autofocus>
+      <input name="name" id="name_input" list="addr_list" class="header__search-menu" placeholder="Enter Area / Locality" autofocus>
+      <datalist id="addr_list">
+		</datalist>
     </div>
     <div class="header__search-btn">Search</div>
 
@@ -89,7 +92,7 @@
   <div class="cuisines">cuisines</div>
   <footer class="footer">footer</footer>
 
-  <script src=""></script>
+ 
 </body>
 
 

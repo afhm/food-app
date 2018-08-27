@@ -27,7 +27,9 @@ $ npm run build
 ```
 ```npm run build``` task creates the dist/ folder in the root of the project which contains html and optimized css, js and imagea assets.
 
+### Database
 
+Import food.sql into phpmyadmin with db name as 'food'.
 
 ### Todos
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <script src="scripts/app.js"></script>
 
   <title>PHP Web App</title>
 </head>
@@ -17,7 +19,7 @@
   <nav class="navbar">
     <div class="navbar__navtitle">Food Express</div>
     <div class="navbar__rightnav">
-      
+
       <a href="index.php">
         <div class="navbar__location navbar--active navbar--btn">
           <i class="fas fa-thumbtack fa-2x"></i>
@@ -50,9 +52,16 @@
   </nav>
   <header class="header">
     <div class="enclose">
-      <input class="header__search-menu" placeholder="Enter Area / Locality" autofocus>
+      <form onsubmit="return validateForm()">
+        <input name="name" id="name_input" list="addr_list" class="header__search-menu" placeholder="Enter Area / Locality" autofocus>
+        <datalist id="addr_list">
+        </datalist>
+        <br>
+        <input type="submit">
+      </form>
+
     </div>
-    <div class="header__search-btn">Search</div>
+    <div class="header__search-btn">Submit</div>
 
   </header>
 
@@ -89,7 +98,7 @@
   <div class="cuisines">cuisines</div>
   <footer class="footer">footer</footer>
 
-  <script src=""></script>
+
 </body>
 
 

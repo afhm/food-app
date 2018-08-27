@@ -31,7 +31,7 @@
         </div>
       </a>
 
-      <a href="orders.php">
+      <a href="review.php">
         <div class="navbar__review navbar--btn">
           <i class="fas fa-shopping-cart fa-2x"></i>
           Review

@@ -1,3 +1,4 @@
+
 window.addEventListener("load", function(){
 	// Add a keyup event listener to our input element
 	document.getElementById('name_input').addEventListener("keyup", function(event){hinter(event)});
@@ -9,7 +10,7 @@ window.addEventListener("load", function(){
 // Autocomplete for form
 function hinter(event) {
 	var input = event.target;
-	var huge_list = document.getElementById('addr_list');
+	var huge_list = document.getElementById('huge_list');
 	// minimum number of characters before we start to generate suggestions
 	var min_characters = 0;
 
@@ -30,7 +31,7 @@ function hinter(event) {
                 });
 			}
 		};
-		window.hinterXHR.open("GET", "./query.php?query=" + input.value, true);
+		window.hinterXHR.open("GET", "./class-hp.php?query=" + input.value, true);
 		window.hinterXHR.send()
 	}
 }

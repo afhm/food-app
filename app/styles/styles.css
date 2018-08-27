@@ -1,3 +1,7 @@
+/* main.scss
+   ========================================================================== */
+/* MIXIN FOR CUSTOM FONTS
+   ========================================================================== */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -15,57 +19,6 @@ html {
  */
 body {
   margin: 0; }
-
-/* HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block; }
-
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */ }
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
-[hidden],
-template {
-  display: none; }
 
 /**
  * Improve readability of focused elements when they are also in an
@@ -116,8 +69,7 @@ svg:not(:root) {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0; }
 
 /**
@@ -125,13 +77,6 @@ hr {
  */
 pre {
   overflow: auto; }
-
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-html input[disabled] {
-  cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
@@ -144,33 +89,34 @@ input::-moz-focus-inner {
 /* Reset
   =============== */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; }
+  box-sizing: inherit; }
 
 figure {
   margin: 0; }
 
+/* FONTS INCLUDE
+   ========================================================================== */
 @font-face {
   font-family: "Open SansL";
   src: url("../../../fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf") format("truetype"); }
 
+/**
+ * base elements reset
+ */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; }
+  box-sizing: inherit; }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 62.5%; }
 
 body {
@@ -188,6 +134,22 @@ a:link,
   color: #fff;
   cursor: pointer; }
 
+/* GRID LAYOUTS
+   ========================================================================== */
+.container {
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 22rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  .container--location {
+    grid-template-rows: [navbar-start] 7rem [navbar-end] 28.4rem repeat(3, min-content); }
+  .container--menu {
+    grid-template-rows: [navbar-start] 7rem [navbar-end] 6.5rem repeat(2, min-content); }
+  .container--review {
+    grid-template-rows: [navbar-start] 7rem [navbar-end] repeat(3, min-content); }
+  .container--track {
+    grid-template-rows: [navbar-start] 7rem [navbar-end] repeat(3, min-content); }
+
+/* NAVBAR
+   ========================================================================== */
 .navbar {
   background-color: #522a27;
   grid-column: full-start / full-end;
@@ -195,28 +157,19 @@ a:link,
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 3rem;
   font-weight: 600;
-  padding-left: 7rem;
-  display: -ms-grid;
+  padding: 2rem 0 0 7rem;
   display: grid;
-  -ms-grid-columns: (max-content)[2];
-      grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, max-content);
   grid-gap: 8rem; }
   .navbar__navtitle {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: max-content;
-        grid-template-columns: max-content;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    grid-template-columns: max-content;
+    align-items: center; }
   .navbar__rightnav {
     font-size: 1.3rem;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (min-content)[4];
-        grid-template-columns: repeat(4, min-content);
-    -ms-flex-line-pack: end;
-        align-content: end;
+    grid-template-columns: repeat(4, min-content);
+    align-content: end;
     grid-gap: 2rem;
     text-transform: uppercase; }
   .navbar__location {
@@ -224,89 +177,76 @@ a:link,
     border: 1px solid rgba(226, 55, 63, 0.87);
     padding: 1.2rem 1rem;
     border-bottom: 0;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: max-content max-content;
-        grid-template-columns: max-content max-content;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    grid-column-gap: 3rem;
-    background-color: rgba(226, 55, 63, 0.87); }
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    grid-column-gap: 3rem; }
   .navbar__menu {
     grid-column: 2 / 3;
     border: 1px solid rgba(226, 55, 63, 0.87);
-    padding: 0.5rem 1rem;
+    padding: 1.2rem 1rem;
     border-bottom: 0;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: max-content max-content;
-        grid-template-columns: max-content max-content;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    grid-template-columns: max-content max-content;
+    align-items: center;
     grid-column-gap: 3rem; }
   .navbar__review {
     grid-column: 3 / 4;
     border: 1px solid rgba(226, 55, 63, 0.87);
-    padding: 0.5rem 1rem;
+    padding: 1.2rem 1rem;
     border-bottom: 0;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: max-content max-content;
-        grid-template-columns: max-content max-content;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    grid-template-columns: max-content max-content;
+    align-items: center;
     grid-column-gap: 3rem; }
   .navbar__track {
     grid-column: 4 / 5;
     border: 1px solid rgba(226, 55, 63, 0.87);
-    padding: 0.5rem 1rem;
+    padding: 1.2rem 1rem;
     border-bottom: 0;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: max-content max-content;
-        grid-template-columns: max-content max-content;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    grid-template-columns: max-content max-content;
+    align-items: center;
     grid-column-gap: 3rem; }
+  .navbar--active, .navbar--btn:hover {
+    background-color: #e45959;
+    color: #fff0f0;
+    transition: 0.2s;
+    cursor: pointer; }
 
-.container {
-  display: -ms-grid;
+.header_menu {
+  background-color: #c0392b;
+  grid-column: full-start / full-end;
   display: grid;
-  -ms-grid-columns: [full-start] minmax(6rem, 1fr) [center-start] ([col-start] minmax(min-content, 22rem) [col-end])[8] [center-end] minmax(6rem, 1fr) [full-end];
-      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 22rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
-  .container--location {
-    -ms-grid-rows: [navbar-start] 7rem [navbar-end] 28.4rem (min-content)[3];
-        grid-template-rows: [navbar-start] 7rem [navbar-end] 28.4rem repeat(3, min-content); }
-  .container--menu {
-    -ms-grid-rows: 6.5rem (min-content)[2];
-        grid-template-rows: 6.5rem repeat(2, min-content); }
-  .container--review {
-    -ms-grid-rows: (min-content)[3];
-        grid-template-rows: repeat(3, min-content); }
-  .container--track {
-    -ms-grid-rows: (min-content)[3];
-        grid-template-rows: repeat(3, min-content); }
+  grid-template-columns: max-content;
+  font-size: 2rem;
+  font-weight: 600; }
+  .header_menu__categories {
+    display: grid;
+    grid-template-columns: repeat(6, max-content);
+    margin-left: 6rem;
+    align-items: center;
+    grid-column-gap: 1.5rem;
+    align-items: end; }
 
+.cat {
+  border-bottom: 0;
+  padding: 1.7rem 1rem;
+  background-color: #A63125; }
+
+/* HEADER COMPONENT
+   ========================================================================== */
 .header {
   background-color: #c0392b;
   grid-column: full-start / full-end;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(min-content, max-content) minmax(min-content, max-content);
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+  justify-content: center; }
   .header__search-menu {
     padding: 16px 16px 16px 90px;
     border: none;
     background: rgba(0, 0, 0, 0.003);
-    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.842);
     margin-top: 10.8rem;
     width: 85rem;
@@ -316,34 +256,28 @@ a:link,
     background-color: rgba(226, 55, 63, 0.87);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 4.2rem;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    align-self: center;
     justify-self: center;
     font-weight: bold;
     padding: 0.1rem 2.5rem;
-    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer; }
 
+/* STEPS COMPONENT
+   ========================================================================== */
 .steps_section {
   grid-column: center-start / center-end;
   margin: 7rem auto;
-  display: -ms-grid;
   display: grid; }
 
 .steps {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(10rem, 1fr))[4];
-      grid-template-columns: repeat(4, minmax(10rem, 1fr));
+  grid-template-columns: repeat(4, minmax(10rem, 1fr));
   grid-gap: 4rem; }
 
 .step {
-  display: -ms-grid;
   display: grid;
-  -ms-flex-line-pack: start;
-      align-content: start; }
+  align-content: start; }
   .step__text {
     font-size: 1.8rem;
     color: #9cb380;
@@ -352,9 +286,62 @@ a:link,
     fill: #a6d49f;
     width: 8.5rem;
     height: 8.5rem;
-    -webkit-transform: translateY(-2rem);
-        -ms-transform: translateY(-2rem);
-            transform: translateY(-2rem);
+    transform: translateY(-2rem);
     justify-self: center; }
   .step__heading-3 {
     margin: 0 auto; }
+
+/* MENU COMPONENT
+   ========================================================================== */
+.menuitems {
+  background-color: #a6d49f;
+  grid-column: full-start / full-end; }
+
+.fooditems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  font-size: 2.1rem;
+  font-weight: 900;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
+  padding: 3rem 3rem 0 3rem; }
+
+.m {
+  display: grid;
+  background-color: #A63125;
+  border: 1px solid rgba(226, 55, 63, 0.87);
+  grid-template-rows: repeat(6, max-content);
+  border-radius: 1rem;
+  grid-row-gap: 1rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center; }
+
+.quantity {
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 1rem; }
+
+.pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.add {
+  background-color: rgba(226, 55, 63, 0.87);
+  padding: 1rem;
+  transition: .1s;
+  cursor: pointer;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.add:hover {
+  background-color: rgba(202, 31, 40, 0.87); }
+
+.add:active {
+  background-color: rgba(133, 1, 7, 0.87); }

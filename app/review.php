@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="container3">
+<body class="container container--review">
 <nav class="navbar">
         <div class="navbar__navtitle">Food Express</div>
 

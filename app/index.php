@@ -61,7 +61,7 @@
       </form>
 
     </div>
-    <div class="header__search-btn">Search</div>
+    <div class="header__search-btn">Submit</div>
 
   </header>
 

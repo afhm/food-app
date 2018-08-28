@@ -29,49 +29,30 @@
         text-transform: uppercase;
     }
 
-    &__location {
-        grid-column: 1 / 2;
-        border: 1px solid rgba(226, 55, 63, 0.87);
+    &__item {
+        border: 1px solid rgba(128, 52, 56, 0.87);
         padding: 1.2rem 1rem;
         border-bottom: 0;
         display:grid;
         grid-template-columns: max-content max-content;
         align-items: center;
         grid-column-gap: 3rem;
-        
+    }
+
+    &__location {
+        grid-column: 1 / 2;
     }
     &__menu {
         grid-column: 2 / 3;
-        border: 1px solid rgba(226, 55, 63, 0.87);
-        padding: 1.2rem 1rem;
-        border-bottom: 0;
-        display:grid;
-        grid-template-columns: max-content max-content;
-        align-items: center;
-        grid-column-gap: 3rem;
     }
     &__review {
         grid-column: 3 / 4;
-        border: 1px solid rgba(226, 55, 63, 0.87);
-        padding: 1.2rem 1rem;
-        border-bottom: 0;
-        display:grid;
-        grid-template-columns: max-content max-content;
-        align-items: center;
-        grid-column-gap: 3rem;
     }
     &__track {
         grid-column: 4 / 5;
-        border: 1px solid rgba(226, 55, 63, 0.87);
-        padding: 1.2rem 1rem;
-        border-bottom: 0;
-        display:grid;
-        grid-template-columns: max-content max-content;
-        align-items: center;
-        grid-column-gap: 3rem;
     }
     &--active, &--btn:hover {
-        background-color: rgb(228, 89, 89);
+        background-color: $color-red;
         color: rgb(255, 240, 240);
         transition: 0.2s;
         cursor: pointer;

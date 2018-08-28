@@ -21,28 +21,28 @@
         <div class="navbar__rightnav">
 
             <a href="index.php">
-                <div class="navbar__location navbar--btn">
+                <div class="navbar__item navbar__location navbar--btn">
                     <i class="fas fa-thumbtack fa-2x"></i>
                     Location
                 </div>
             </a>
 
             <a href="menu.php">
-                <div class="navbar__menu navbar--btn">
+                <div class="navbar__item navbar__menu navbar--btn">
                     <i class="fas fa-utensils fa-2x"></i>
                     Menu
                 </div>
             </a>
 
             <a href="review.php">
-                <div class="navbar__review navbar--active navbar--btn">
+                <div class="navbar__item navbar__review navbar--active navbar--btn">
                     <i class="fas fa-shopping-cart fa-2x"></i>
                     Review
                 </div>
             </a>
 
             <a href="track.php">
-                <div class="navbar__track navbar--btn">
+                <div class="navbar__item navbar__track navbar--btn">
                     <i class="fas fa-box fa-2x"></i>
                     Track
                 </div>

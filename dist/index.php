@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="scripts/app.js"></script>
 
   <title>PHP Web App</title>
@@ -52,17 +53,10 @@
   </nav>
   <header class="header">
     <div class="enclose">
-      <form onsubmit="return validateForm()" autocomplete="off">
-        <input name="name" id="name_input" list="addr_list" class="header__search-menu" placeholder="Enter Area / Locality" autofocus>
-        <datalist id="addr_list">
-        </datalist>
-        <br>
-  
-      
-
+        <input type="text" name="location" id="location" class="header__search-menu" placeholder="Enter Area / Locality" autofocus>
+       <div id="locationList"></div>
     </div>
     <button class="header__search-btn">Submit</button>
-    </form>
   </header>
 
   <section class="steps_section">

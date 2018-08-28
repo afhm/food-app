@@ -103,7 +103,7 @@ figure {
    ========================================================================== */
 @font-face {
   font-family: "Open SansL";
-  src: url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"); }
+  src: url("../../../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"); }
 
 /**
  * base elements reset

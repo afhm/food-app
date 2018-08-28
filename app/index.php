@@ -52,7 +52,7 @@
   </nav>
   <header class="header">
     <div class="enclose">
-      <form onsubmit="return validateForm()">
+      <form onsubmit="return validateForm()" autocomplete="off">
         <input name="name" id="name_input" list="addr_list" class="header__search-menu" placeholder="Enter Area / Locality" autofocus>
         <datalist id="addr_list">
         </datalist>

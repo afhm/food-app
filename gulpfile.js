@@ -8,7 +8,7 @@ var autoPrefixBrowserList = ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'oper
 gulp = require('gulp');
 gutil = require('gulp-util');
 concat = require('gulp-concat');
-uglify = require('gulp-uglify');
+uglify = require('gulp-uglify-es').default;
 sass = require('gulp-sass');
 imagemin = require('gulp-imagemin');
 minifyCSS = require('gulp-minify-css');
@@ -72,17 +72,17 @@ gulp.task('scripts', function() {
 });
 
 //compiling our Javascripts for deployment
-gulp.task('scripts-deploy', function () {
+gulp.task('scripts-deploy', function() {
   //this is where our dev JS scripts are
-  return gulp.src(['app/scripts/**/*.js', 'app/scripts/**/*.js'])
-    //prevent pipe breaking caused by errors from gulp plugins
-    .pipe(plumber())
-    //this is the filename of the compressed version of our JS
-    .pipe(concat('app.js'))
-    //compress :D
-    .pipe(uglify())
-    //where we will store our finalized, compressed script
-    .pipe(gulp.dest('dist/scripts'));
+  return gulp.src(['app/scripts/src/_includes/**/*.js', 'app/scripts/src/**/*.js'])
+              //prevent pipe breaking caused by errors from gulp plugins
+              .pipe(plumber())
+              //this is the filename of the compressed version of our JS
+              .pipe(concat('app.js'))
+              //compress :D
+              .pipe(uglify())
+              //where we will store our finalized, compressed script
+              .pipe(gulp.dest('dist/scripts'));
 });
 
 //compiling our SCSS files
